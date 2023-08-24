@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Predictive Analysis</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body style="height: fit-content; background-color: grey lighten-1;" >
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">BBP</a></li>
+    <li><a href="#!">URTI</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">About</a></li>
+</ul>
+<nav class="grey darken-3">
+    <div class="nav-wrapper">
+        <!-- Add an image in the logo -->
+        <a href="static\images\kemri-logo.png" class="brand-logo" style="padding-left: 20px;"><img src="static\images\kemri-logo.png" alt="Logo" style="margin-right: 20px;" width="55px" class="circle"></a>
+        <a id="logo-container" href="#" class="brand-logo" style="padding-left: 10em;" >AFI <strong>AI</strong> MODULE</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Diagnosis</a></li>
+            <li><a href="badges.html">Prescription</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Pathogens<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h5 class="header center teal-text text-darken-2"> <b>Blood Borne Pathogens</b><strong> Prediction</strong></h5>
+      <div class="card-panel">
+        <span class="teal-text text-darken-2"><blockquote >
+          The AFI Pathogen Prediction System is a web-based application that uses artificial intelligence to predict the presence of pathogens in clinical samples.
+           The system is powered by a large dataset of patient records and pathogen data, and it is able to provide accurate predictions in a matter of seconds. 
+           The AFI Pathogen Prediction System can help clinicians to make better decisions about patient care,
+           and it can help to improve the overall outcomes of patients with infectious diseases.
+        </blockquote></span>
+      </div>
+      
+      <br>
+      <br>
+      <div class="row center">
+        <h6 class="header col s12 light"> Choose subjects symptoms below:  </h6>
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12" style="height: 30vh;">
+      <div class="row">
+        <div class="input-field col s12">
+          <select multiple name="symptoms">
+           <!-- <option value=""  selected disabled>Selected:</option> -->
+            <option value="Chills">Chills</option>
+            <option value="Cough">Cough</option>
+            <option value="Difficulty_breathing">Difficulty breathing</option>
+            <option value="Sputum_production">Sputum production</option>
+            <option value="Sore_throat">Sore throat</option>
+            <option value="Headache">Headache</option>
+            <option value="Runny_nose">Runny nose</option>
+            <option value="Eye_pain">Eye pain</option>  
+            <option value="Tick_bites">Tick bites</option>
+            <option value="Abdominal_pain">Abdominal pain</option>
+            <option value="Vomiting">Vomiting</option>
+            <option value="Diarrhoea">Diarrhoea</option>
+            <option value="Seizures">Seizures</option>
+            <option value="Blood_in_stool">Blood in Stool</option>
+            <option value="Bleeding">Bleeding</option>
+            <option value="Bruising">Bruising</option>
+            <option value="Rash">Rash</option>
+            <option value="Joint_Aches">Joint Aches</option>
+            <option value="Muscle_aches">Muscle aches</option>
+            <option value="Dark_urine">Dark Urine</option>
+            <option value="Jaundice">Jaundice</option>
+          </select>
+          <label><b>Selected Symptoms:</b> </label>
+          
+        </div>
+       <script src="static\js\materialize.min.js"></script>
+        <script>
+          
+          // Function to clear the prediction result after a delay
+          function clearPrediction() {
+              var predText = document.getElementById('pred-text');
+              predText.textContent = '';
+          }
+      
+          document.addEventListener('DOMContentLoaded', function() {
+              $(".dropdown-trigger").dropdown({ hover: false });
+              var elems = document.querySelectorAll('select');
+              var instances = M.FormSelect.init(elems);
+      
+              var resetButton = document.getElementById('reset-button');
+              resetButton.addEventListener('click', function() {
+                  var predText = document.getElementById('pred-text');
+                  predText.textContent = ''; // Clear the content of the pred text object
+      
+                  var elems = document.querySelectorAll('select');
+                  var instances = M.FormSelect.init(elems);
+              });
+      
+              var predText = document.getElementById('pred-text');
+              if (predText.textContent) {
+                  // Clear the prediction result after 20 seconds
+                  setTimeout(clearPrediction, 20000); // 20000 milliseconds (5 seconds)
+              endif
+              }
+          });
+      </script>
+      </div>
+
+      <div class="row center">
+          <button type="submit" class="btn-large waves-effect waves-light teal" name="action">Predict Pathogen</button>
+          <button type="button" class="btn-large waves-effect waves-light grey darken-2" id="reset-button">Reset Prediction </button>
+    </form>
+      </div>
+
+      <br>
+        <div id="pred-text">{{pred}}</div><br>
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  
+
+  <!--  Scripts-->
+  
+  <script src="static\js\jquery-2.1.1.min.js"></script>
+  <script src="static\js\materialize.js"></script>
+  <script src="static\js\init.js"></script>
+
+  </body>
+</html>
+
