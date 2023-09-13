@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title> AI</title>
+  <title>AI</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,9 +11,9 @@
   <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
-<body style="height: fit-content; background-color: grey lighten-1;">
+<body style="height: fit-content; background-color: grey lighten-1;" >
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#">BBP</a></li>
+    <li><a href="pathogen_predict.html">BBP</a></li>
     <li><a href="#">URTI</a></li>
     <li class="divider"></li>
     <li><a href="#!">About</a></li>
@@ -24,11 +24,10 @@
         <a href="static\images\kemri-logo.png" class="brand-logo" style="padding-left: 20px;"><img src="static\images\kemri-logo.png" alt="Logo" style="margin-right: 20px;" width="55px" class="circle"></a>
         <a id="logo-container" href="#" class="brand-logo" style="padding-left: 10em;" >AFI <strong>AI</strong> MODULE</a>
         <ul class="right hide-on-med-and-down">
-          <!-- Dropdown Trigger -->
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Pathogen Prediction<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="sass.html">Diagnosis</a></li>
             <li><a href="badges.html">Prescription</a></li>
-            
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Pathogens<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
     </div>
 </nav>
@@ -37,11 +36,8 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h5 class="header center teal-text text-darken-2"> <b>Blood Borne Pathogens</b><strong> Prediction</strong></h5>
+      <h5 class="header center teal-text text-darken-2"> <b>Upper Respiratory Tract Infections</b><strong> Prediction</strong></h5>
       <div class="card-panel">
-        <div class="col s2">
-          <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-        </div>
         <span class="teal-text text-darken-2"><blockquote >
           The AFI Pathogen Prediction System is a web-based application that uses artificial intelligence to predict the presence of pathogens in clinical samples.
            The system is powered by a large dataset of patient records and pathogen data, and it is able to provide accurate predictions in a matter of seconds. 
@@ -113,8 +109,8 @@
       
               var predText = document.getElementById('pred-text');
               if (predText.textContent) {
-                  // Clear the prediction result after 20 seconds
-                  setTimeout(clearPrediction, 20000); // 20000 milliseconds (5 seconds)
+                  // Clear the prediction result after 15 seconds
+                  setTimeout(clearPrediction, 15000); // 15000 milliseconds (15 seconds)
               endif
               }
           });

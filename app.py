@@ -12,6 +12,12 @@ selected_symptoms = []  # Initialize `selected_symptoms`
 def hello_world():
     return render_template("pathogen_predict.html")
 
+@app.route('/urti_predict')
+def urti_predict():
+    return render_template('urti_predict.html')
+
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     global selected_symptoms, prediction_made
@@ -31,3 +37,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
