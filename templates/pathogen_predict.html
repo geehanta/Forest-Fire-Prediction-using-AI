@@ -14,7 +14,7 @@
 <body style="height: fit-content; background-color: grey lighten-1;">
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#">BBP</a></li>
-    <li><a href="#">URTI</a></li>
+    <li><a href="{{ url_for('urti_predict') }}">URTI</a></li>
     <li class="divider"></li>
     <li><a href="#!">About</a></li>
 </ul>
@@ -37,7 +37,7 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h5 class="header center teal-text text-darken-2"> <b>Blood Borne Pathogens</b><strong> Prediction</strong></h5>
+      <h5 class="header center brown-text text-lighten-1"> <b>Blood Borne Pathogens</b><strong> Prediction</strong></h5>
       <div class="card-panel">
         <div class="col s2">
           <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
@@ -122,7 +122,7 @@
       </div>
 
       <div class="row center">
-          <button type="submit" class="btn-large waves-effect waves-light teal" name="action">Predict Pathogen</button>
+          <button type="submit" class="btn-large waves-effect waves-light brown lighten-2" name="action">Predict Pathogen</button>
           <button type="button" class="btn-large waves-effect waves-light grey darken-2" id="reset-button">Reset Prediction </button>
     </form>
       </div>

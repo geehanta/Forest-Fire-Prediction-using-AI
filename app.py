@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 model = pickle.load(open('rfmodel.pkl', 'rb'))
 selected_symptoms = []  # Initialize `selected_symptoms`
+prediction_made = False  # Initialize `prediction_made` to False
 
 @app.route('/')
 def hello_world():
@@ -14,8 +15,7 @@ def hello_world():
 
 @app.route('/urti_predict')
 def urti_predict():
-    return render_template('urti_predict.html')
-
+    return render_template('urti_pathogen_predict.html')
 
 
 @app.route('/predict', methods=['POST'])
