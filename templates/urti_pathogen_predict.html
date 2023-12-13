@@ -54,10 +54,10 @@
       </div>
 
               <div class="row">
-    <form action='/predict' method="post" class="col s12" style="height: 30vh;">
+    <form action='/urti-predict' method="post" class="col s12" style="height: 30vh;">
       <div class="row">
         <div class="input-field col s12">
-          <select multiple name="symptoms">
+          <select multiple name="symptoms_urti">
            <!-- <option value=""  selected disabled>Selected:</option> -->
             <option value="Chills">Chills</option>
             <option value="Cough">Cough</option>
@@ -66,20 +66,16 @@
             <option value="Sore_throat">Sore throat</option>
             <option value="Headache">Headache</option>
             <option value="Runny_nose">Runny nose</option>
-            <option value="Eye_pain">Eye pain</option>  
+            <option value="Eye_pain">Eye pain</option> 
+            <option value="Seizures">Seizures</option> 
             <option value="Tick_bites">Tick bites</option>
             <option value="Abdominal_pain">Abdominal pain</option>
             <option value="Vomiting">Vomiting</option>
             <option value="Diarrhoea">Diarrhoea</option>
-            <option value="Seizures">Seizures</option>
-            <option value="Blood_in_stool">Blood in Stool</option>
-            <option value="Bleeding">Bleeding</option>
-            <option value="Bruising">Bruising</option>
             <option value="Rash">Rash</option>
             <option value="Joint_Aches">Joint Aches</option>
             <option value="Muscle_aches">Muscle aches</option>
             <option value="Dark_urine">Dark Urine</option>
-            <option value="Jaundice">Jaundice</option>
           </select>
           <label><b>Selected Symptoms:</b> </label>
           
@@ -124,7 +120,7 @@
       </div>
 
       <br>
-        <div id="pred-text">{{pred}}</div><br>
+        <div id="pred-text">{{urtipred}}</div><br>
     </div>
   </div>
 
